@@ -18,9 +18,7 @@ model = model.to(device)
 
 print('Model path {:s}. \nTesting...'.format(model_path))
 
-idx = 0
-for path in glob.glob(test_img_folder):
-    idx += 1
+for idx, path in enumerate(glob.glob(test_img_folder), start=1):
     base = osp.splitext(osp.basename(path))[0]
     print(idx, base)
     # read images

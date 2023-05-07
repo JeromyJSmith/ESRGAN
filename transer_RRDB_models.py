@@ -17,10 +17,7 @@ for k, v in pretrained_net.items():
 pretrained_net = load_net_clean
 
 print('###################################\n')
-tbd = []
-for k, v in crt_net.items():
-    tbd.append(k)
-
+tbd = [k for k, v in crt_net.items()]
 # directly copy
 for k, v in crt_net.items():
     if k in pretrained_net and pretrained_net[k].size() == v.size():
